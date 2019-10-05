@@ -1,14 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+    contatos
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-content padding>
+    <ion-card *ngFor="let contato of contatos" (click)="onItemClick(contato)">
+    <ion-card-header>
+    {{contato.nome}}
+    </ion-card-header>
+    <ion-card-content>
+    <ion-card-title>
+    {{contato.telefone}}
+    </ion-card-title>
+    <p>
+    {{contato.email}}
+    </p>
+    </ion-card-content>
+    </ion-card>
+   </ion-content>
 </ion-content>
